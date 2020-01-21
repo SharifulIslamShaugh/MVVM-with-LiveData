@@ -2,6 +2,7 @@ package com.raiseitsolutions.mvvmwithlivedata.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.raiseitsolutions.mvvmwithlivedata.R
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         val mainActivityViewModel = ViewModelProviders.of(this)[MainActivityViewModel::class.java]
 
         mainActivityViewModel.getAllUserData().observe(this, Observer {
-
+            Log.d("ALLDATA", it.toString())
         })
     }
 }

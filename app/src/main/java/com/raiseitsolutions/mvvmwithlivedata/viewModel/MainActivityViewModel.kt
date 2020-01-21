@@ -6,9 +6,11 @@ import androidx.lifecycle.LiveData
 import com.raiseitsolutions.mvvmwithlivedata.model.User
 import com.raiseitsolutions.mvvmwithlivedata.model.UserRepository
 
+
+
 class MainActivityViewModel(application: Application) : AndroidViewModel(application) {
-      var userRepository = UserRepository(application)
+    var userRepository: UserRepository? = null
     fun  getAllUserData(): LiveData <Array<User>>{
-        return userRepository.getUserData()
+        return userRepository!!.getUserData()
     }
 }
